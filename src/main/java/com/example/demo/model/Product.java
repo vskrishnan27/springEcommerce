@@ -4,6 +4,8 @@ import javax.persistence.*;
 
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @Table(name="products")
@@ -11,13 +13,13 @@ import org.springframework.stereotype.Component;
 public class Product {
   
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String productId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    private Long productId;
     private String productName;
     private int price,stock;
     public Product() {
     }
-    public Product(String productName, String productId, int price, int stock) {
+    public Product(String productName, Long productId, int price, int stock) {
         this.productName = productName;
         this.productId = productId;
         this.price = price;
@@ -29,10 +31,10 @@ public class Product {
     public void setProductName(String productName) {
         this.productName = productName;
     }
-    public String getProductId() {
+    public Long getProductId() {
         return productId;
     }
-    public void setProductId(String productId) {
+    public void setProductId(Long productId) {
         this.productId = productId;
     }
     public int getPrice() {
