@@ -15,7 +15,7 @@ import com.example.demo.model.Product;
 
 @Repository
 @Component
-public interface LoginRepository extends JpaRepository<Product,Long>{
+public interface ProductRepository extends JpaRepository<Product,Long>{
    
     @Modifying
     @Transactional
